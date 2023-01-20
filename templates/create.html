@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Message {% endblock %}</h1>
+    <form method="post" enctype=multipart/form-data>
+        <label for="email">E-Mail</label>
+        <br>
+        <input type="text" name="email"
+               placeholder="E-Mail pentru fisier"
+               value="{{ request.form['email'] }}"></input>
+        <br>
+        <br>
+        <label for="myfile">Incarcati arhiva zip</label>
+        <br>
+        <input type="file" accept="application/zip" id="myfile" name="myfile"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
